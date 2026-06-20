@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "aem-dashboard": {
+    "angular-assessment": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/aem-dashboard",
+            "outputPath": "dist/angular-assessment",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "aem-dashboard:build:production"
+              "browserTarget": "angular-assessment:build:production"
             },
             "development": {
-              "browserTarget": "aem-dashboard:build:development"
+              "browserTarget": "angular-assessment:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aem-dashboard:build"
+            "browserTarget": "angular-assessment:build"
           }
         },
         "test": {

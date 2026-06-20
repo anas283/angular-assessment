@@ -20,10 +20,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'aem-dashboard'`, () => {
+  it(`should have as title 'angular-assessment'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('aem-dashboard');
+    expect(app.title).toEqual('angular-assessment');
   });
 
   it('should render router outlet', () => {
