@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Dashboard</span>
+    <button class="btn btn-sm border-0 text-light" (click)="signOut()"><i class="bi bi-box-arrow-right mr-2"></i>Sign Out</button>
+  </div>
+</nav>
+
+<div class="container-fluid dashboard-container">
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <ng-container *ngIf="!loading && dashboardData">
+    <h2 class="section-title">Overview</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">Card Title</div>
+          <div class="card-body">
+            <app-donut-chart [data]="dashboardData.chartDonut"></app-donut-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-header">Card Title</div>
+          <div class="card-body">
+            <app-bar-chart [data]="dashboardData.chartBar"></app-bar-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">User List</h2>
+    <app-user-table [users]="dashboardData.tableUsers"></app-user-table>
+  </ng-container>
+</div>
